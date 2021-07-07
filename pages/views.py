@@ -12,8 +12,12 @@ def home(request):
 
 
 def about(request):
+    teams = Team.objects.all()
+    data = {
+        'teams': teams,
+    }
 
-    return render(request, 'pages/about.html')
+    return render(request, 'pages/about.html', data)
 
 
 def service(request):
